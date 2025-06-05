@@ -1,11 +1,11 @@
 @charset "UTF-8";
 @font-face {
   font-family: "NotoSerifKR";
-  src: url(../../font/NotoSerifKR-VariableFont_wght.ttf) format("truetype"), url(../../font/NotoSerifKR-VariableFont_wght.woff) format("woff");
+  src: url(../font/NotoSerifKR-VariableFont_wght.ttf) format("truetype"), url(../font/NotoSerifKR-VariableFont_wght.woff) format("woff");
 }
 @font-face {
   font-family: "PlayfairDisplay";
-  src: url(../../font/PlayfairDisplay-VariableFont_wght.ttf) format("truetype"), url(../../font/PlayfairDisplay-VariableFont_wght.woff) format("woff");
+  src: url(../font/PlayfairDisplay-VariableFont_wght.ttf) format("truetype"), url(../font/PlayfairDisplay-VariableFont_wght.woff) format("woff");
 }
 body.is-loding {
   opacity: 0;
@@ -24,7 +24,7 @@ body.is-loding {
   overflow: hidden;
 }
 .noise .noise-img {
-  background-image: url(../../images/noise.avif);
+  background-image: url(../images/noise.avif);
   width: 100%;
   height: 100%;
   opacity: 0.9;
