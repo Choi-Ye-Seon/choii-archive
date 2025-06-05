@@ -106,9 +106,9 @@ pcMenus.forEach(function(menu){
 
 const mobileMenus = document.querySelectorAll(".mobile-nav .btn:not(.letter)");
 mobileMenus.forEach(function(menu){
-  menu.addEventListener('click', function(){
+  menu.addEventListener('click', function(e){
     if(mediaQueryMO.matches){
-      handleMenuClick();
+      handleMenuClick(e);
       mobileNavHidden();
       gsap.set(noise,{autoAlpha:1});
       header.classList.remove('fixed');
