@@ -42,7 +42,7 @@ window.addEventListener("scroll",function(){
 const mobileMenuBtn = header.querySelector('#mobile-menu');
 const mobileNav = header.querySelector('.mobile-nav');
 const mobileNavBox = mobileNav.querySelector('ul');
-const mobileLogo = header.querySelector('.link-logo');
+const mobileLogo = header.querySelector('.btn-home');
 const mobileBtnBar = mobileMenuBtn.querySelectorAll('span');
 
 
