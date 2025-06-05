@@ -108,6 +108,7 @@ const mobileMenus = document.querySelectorAll(".mobile-nav .btn:not(.letter)");
 mobileMenus.forEach(function(menu){
   menu.addEventListener('click', function(){
     if(mediaQueryMO.matches){
+      handleMenuClick();
       mobileNavHidden();
       gsap.set(noise,{autoAlpha:1});
       header.classList.remove('fixed');
@@ -115,8 +116,6 @@ mobileMenus.forEach(function(menu){
       mobileMenuBtn.classList.remove('show');
 
         isMenuOpen = false;  // 상태 동기화
-
-      // console.log('메뉴 눌렀다.');
     }
   });
 });
