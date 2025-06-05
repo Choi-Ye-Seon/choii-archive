@@ -1,0 +1,118 @@
+#footer {
+  background-color: $color-black;
+  color: $color-white;
+  padding: 100px 0 20px;
+  .inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+    @include tablet-l {
+      gap: 6.67vw;
+    }
+    @include tablet-p {
+      gap: 60px;
+    }
+    @include mobile-p {
+      gap: 46px;
+    }
+  }
+  h2 {
+    font-family: 'PlayfairDisplay';
+    display: flex;
+    justify-content: center;
+    // margin-bottom: 80px;
+    font-size: 5.625rem;
+    font-weight: 600;
+    text-align: center;
+    border-bottom: 2px solid $color-white;
+    white-space: nowrap;
+    @include tablet-l {
+      font-size: clamp(24px, 7.5vw, 90px);
+    }
+    // span {
+    //   position: relative;
+
+    //   &::after {
+    //     position: absolute;
+    //     content: '';
+    //     width: 100%;
+    //     height: 2px;
+    //     bottom: 0;
+    //     left: 0;
+    //     background-color: $color-white;
+    //   }
+    // }
+  }
+  .btn-box {
+    display: flex;
+    justify-content: center;
+    // margin-bottom: 80px;
+  }
+  .footer-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    // margin-bottom: 100px;
+    @include mobile-p {
+      gap: 2.143rem;
+    }
+  }
+  .link-sns {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.8);
+    padding-bottom: 3px;
+
+    transition: color 0.3s;
+
+    &::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50px;
+      margin-top: 1px;
+      background-color: rgba(255, 255, 255, 0.8);
+      transition: background-color 0.3s;
+    }
+    &::after {
+      position: absolute;
+      content: '';
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: $color-white;
+      transition: width 0.3s;
+    }
+    &:hover {
+      color: $color-white;
+
+      &::before {
+        background-color: $color-white;
+      }
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+  .copyright-box {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    word-break: keep-all;
+    @include tablet-p {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .footer-text {
+      font-family: 'NotoSerifKR';
+    }
+  }
+}
