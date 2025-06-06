@@ -84,6 +84,8 @@ const headerLogo = header.querySelector('.btn-home');
 headerLogo.addEventListener('click', function(e){
   e.preventDefault();
   lenis.scrollTo(0, { immediate: true });
+  gsap.set('.sc-home .main-scroll .main-frame', {scale: 1, autoAlpha: 1});
+
 });
 
 
