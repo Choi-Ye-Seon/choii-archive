@@ -26,9 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
   gsap.set('.sc-home h2 .char', {autoAlpha: 0});
   gsap.set('.sc-home .main-scroll .main-frame',{scale:0.4, autoAlpha:0});
 
-  const mainTitle = gsap.timeline({
-    once:true
-  });
+  const mainTitle = gsap.timeline();
   mainTitle
     // .to('.sc-home .group-title, .sc-home .main-scroll .content-box',{autoAlpha:1})
   .to('.sc-home h3 .text-box span', {yPercent: 0, stagger: 0.5})

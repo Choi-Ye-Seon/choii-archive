@@ -79,14 +79,17 @@ mobileMenuBtn.addEventListener('click',function(){
   }
 });
 
-// logo 클릭 시, scrollTo : 0 이동
-const headerLogo = header.querySelector('.btn-home');
-headerLogo.addEventListener('click', function(e){
-  e.preventDefault();
-  lenis.scrollTo(0, { immediate: true });
-  gsap.set('.sc-home .main-scroll .main-frame', {scale: 1, autoAlpha: 1});
 
-});
+
+
+// logo 클릭 시, scrollTo : 0 이동
+// const headerLogo = header.querySelector('.btn-home');
+// headerLogo.addEventListener('click', function(e){
+//   e.preventDefault();
+// location.reload();
+//   // lenis.scrollTo(0, { immediate: true });
+
+// });
 
 
 
@@ -98,8 +101,16 @@ function handleMenuClick(e){
   const navData = target.dataset.link;
 
   console.log('menu clicked:',navData);
-  lenis.scrollTo(navData);
+  lenis.scrollTo(navData, { immediate: true });
 }
+
+const headerLogo = header.querySelector('.btn-home');
+headerLogo.addEventListener('click', handleMenuClick);
+
+
+
+
+
 
 const pcMenus = document.querySelectorAll("#nav .btn:not(#mobile-menu)");
 pcMenus.forEach(function(menu){
