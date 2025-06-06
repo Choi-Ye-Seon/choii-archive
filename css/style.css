@@ -899,6 +899,8 @@ html.fixed {
   height: min-content;
   overflow: visible;
   padding: 1.25rem;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
 }
 .sc-home .area-figure {
   position: relative;

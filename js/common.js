@@ -83,8 +83,7 @@ mobileMenuBtn.addEventListener('click',function(){
 const headerLogo = header.querySelector('.btn-home');
 headerLogo.addEventListener('click', function(e){
   e.preventDefault();
-  gsap.set('.sc-home .main-scroll .main-frame',{scale:1});
-  lenis.scrollTo(0,{duration:1});
+  lenis.scrollTo(0, { immediate: true });
 });
 
 
