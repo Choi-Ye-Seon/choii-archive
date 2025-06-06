@@ -20,6 +20,9 @@
     height: 100vh;
     padding: 0 2.5rem;
     z-index: 1;
+    @include tablet-p {
+      padding: 0 1.3333rem;
+    }
     .wrap {
       display: flex;
       flex-direction: column;
@@ -133,7 +136,7 @@
     width: min-content;
     height: min-content;
     overflow: visible;
-    padding: 20px 40px;
+    padding: 1.25rem;
   }
 
   .area-figure {
@@ -348,6 +351,9 @@
     padding-top: 150vh;
     @include tablet-l {
       padding-top: 0;
+    }
+    @include mobile-p {
+      gap: 40px;
     }
     .frame-box {
       display: flex;

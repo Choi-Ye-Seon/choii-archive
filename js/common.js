@@ -108,6 +108,8 @@ const mobileMenus = document.querySelectorAll(".mobile-nav .btn:not(.letter)");
 mobileMenus.forEach(function(menu){
   menu.addEventListener('click', function(e){
     if(mediaQueryMO.matches){
+        // e.preventDefault();
+
       handleMenuClick(e);
       mobileNavHidden();
       gsap.set(noise,{autoAlpha:1});
@@ -283,18 +285,20 @@ letterCloseAniamtion();
 // 초기 이벤트 등록
 handleLetterEventBinding();
 
-// letter 이벤트 버블링 방지지
+// letter 이벤트 버블링 방지
 function handleStopPropagation() {  
   const letterPC = document.querySelector('.sc-letter .paper');
   const letterMO = document.querySelector('.sc-letter .inner');
   
   letterPC?.removeEventListener('wheel', stopWheel, true);
   letterMO?.removeEventListener('wheel', stopWheel, true);
+  letterMO?.removeEventListener('touchmove', stopWheel, { passive: false, capture: true });
 
   if (mediaQueryPC.matches) {
     letterPC?.addEventListener('wheel', stopWheel, true);
   } else {
     letterMO?.addEventListener('wheel', stopWheel, true);
+    letterMO?.addEventListener('touchmove', stopWheel,  { passive: false, capture: true });
   }
 }
 function stopWheel(e) {

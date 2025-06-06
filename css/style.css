@@ -134,6 +134,11 @@ body.is-loding {
   margin: 0 auto;
   padding: 0 2.5rem;
 }
+@media (max-width: 768px) {
+  .inner {
+    padding: 0 1.3333rem;
+  }
+}
 
 .btn-primary {
   background-color: #000;
@@ -711,6 +716,11 @@ html.fixed {
   padding: 0 2.5rem;
   z-index: 1;
 }
+@media (max-width: 768px) {
+  .sc-home .group-title {
+    padding: 0 1.3333rem;
+  }
+}
 .sc-home .group-title .wrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -888,7 +898,7 @@ html.fixed {
   height: -moz-min-content;
   height: min-content;
   overflow: visible;
-  padding: 20px 40px;
+  padding: 1.25rem;
 }
 .sc-home .area-figure {
   position: relative;
@@ -1180,6 +1190,11 @@ html.fixed {
 @media (max-width: 1200px) {
   .sc-film .group-film {
     padding-top: 0;
+  }
+}
+@media (max-width: 480px) {
+  .sc-film .group-film {
+    gap: 40px;
   }
 }
 .sc-film .group-film .frame-box {
