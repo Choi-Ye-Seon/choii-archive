@@ -342,7 +342,13 @@
       }
     }
     .desc {
+      display: flex;
+      align-items: center;
       line-height: 1.8;
+      &::before {
+        content: ':';
+        padding-right: 5px;
+      }
     }
   }
   .group-film {
@@ -355,12 +361,6 @@
     }
     @include mobile-p {
       gap: 40px;
-    }
-    .frame-box {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 10px;
     }
     .frame-img {
       img {
@@ -444,15 +444,8 @@
     }
   }
   .frame-box {
-    display: flex;
-    align-items: center;
     flex: 1;
     max-width: 600px;
-    // background-color: lightblue;
-    // height: 100%;
-    // @include tablet-l {
-    //   max-width: 480px;
-    // }
   }
   .line {
     width: 1px;

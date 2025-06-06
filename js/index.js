@@ -202,13 +202,16 @@ filmTitle.forEach(function (text) {
 const filmDesc = document.querySelectorAll('.sc-film .desc');
 
 filmDesc.forEach(function (desc) {
-  wordEls = desc.textContent.split('');
-  wordWrap = wordEls
+  let wordEls = desc.innerHTML.split(''); // 또는 textContent 그대로 써도 OK
+  let wordWrap = wordEls
     .map(function (word) {
+      if (word === ' ') {
+        return `<span class="word">&nbsp;</span>`; // 띄어쓰기 보존
+      }
       return `<span class="word">${word}</span>`;
     })
     .join('');
-  desc.innerHTML = wordWrap; // 수정된 부분
+  desc.innerHTML = wordWrap;
 });
 
 // 8-2. Film scrollTrigger (PC)

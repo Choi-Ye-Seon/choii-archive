@@ -21,78 +21,95 @@
 
 <body class="is-loding">
     <div class="page-wrapper">
-        <div class="noise">
+        <div class="noise" aria-hidden="true">
             <div class="noise-img"></div>
         </div>
         <!-- header -->
         <header id="header">
             <div class="inner">
-                <h1><a href="#" class="btn-home" data-link="#home">CHOII'S<br>ARCHIVE</a></h1>
+                <h1><a href="#home" class="link-home" data-link="#home" aria-label="홈으로 이동">CHOII'S<br>ARCHIVE</a></h1>
+                <!-- PC NAV -->
                 <nav id="nav">
                     <ul>
-                        <li class="btn menu" data-link="#film">
+                        <!-- Film -->
+                        <li class="nav-item menu" data-link="#film">
                             <a href="#film" class="text-wrap">
                                 <span class="origin">Film</span>
-                                <span class="origin active">Film</span>
+                                <span class="origin active" aria-hidden="true">Film</span>
                             </a>
                         </li>
-                        <li class="btn menu" data-link="#about">
+                        <!-- About -->
+                        <li class="nav-item menu" data-link="#about">
                             <a href="#about" class="text-wrap">
                                 <span class="origin">About</span>
-                                <span class="origin active">About</span>
+                                <span class="origin active" aria-hidden="true">About</span>
                             </a>
                         </li>
-                        <li class="btn menu">
-                            <a href="https://www.instagram.com/choii__film/" target="_blank" class="text-wrap">
+                        <!-- Instagram -->
+                        <li class="nav-item menu">
+                            <a href="https://www.instagram.com/choii__film/" target="_blank" class="text-wrap"
+                                aria-label="인스타그램 열기">
                                 <span class="origin">Instagram</span>
-                                <span class="origin active">Instagram</span>
+                                <span class="origin active" aria-hidden="true">Instagram</span>
                             </a>
                         </li>
-                        <li class="btn letter pc-letter">
-                            <button class="btn-primary monthly-letter">
+                        <!-- Monthly Letter -->
+                        <li class="nav-item letter pc-letter">
+                            <button class="btn-primary monthly-letter" aria-expanded="false"
+                                aria-controls="monthly-letter">
                                 <span class="text-wrap">
                                     <span class="origin">Monthly Letter</span>
-                                    <span class="origin active">Monthly Letter</span>
+                                    <span class="origin active" aria-hidden="true">Monthly Letter</span>
                                 </span>
                             </button>
-                            <button class="btn-primary btn-close">
+                            <button class="btn-primary btn-close" aria-label="Monthly letter 닫기"
+                                aria-controls="monthly-letter">
                                 <span class="text-wrap">
                                     <span class="origin">Close</span>
-                                    <span class="origin active">Close</span>
+                                    <span class="origin active" aria-hidden="true">Close</span>
                                 </span>
                             </button>
                         </li>
-                        <li class="btn" id="mobile-menu">
-                            <button class="btn-menu">
-                                <span></span>
-                                <span></span>
+                        <!-- Mobile Menu -->
+                        <li class="nav-item" id="mobile-menu">
+                            <button class="btn-menu" aria-expanded="false" aria-controls="mobile-navbar">
+                                <span aria-hidden="true"></span>
+                                <span aria-hidden="true"></span>
                             </button>
                         </li>
                     </ul>
                 </nav>
-                <div class="mobile-nav">
+                <!-- // PC NAV -->
+                <!-- MOBILE NAV -->
+                <div class="mobile-nav" id="mobile-navbar">
                     <div class="inner">
                         <ul>
-                            <li class="btn menu" data-link="#film">
+                            <!-- Film -->
+                            <li class="nav-item menu" data-link="#film">
                                 <a href="#film" class="text-wrap">
                                     <span class="origin">Film</span>
-                                    <span class="origin active">Film</span>
+                                    <span class="origin active" aria-hidden="true">Film</span>
                                 </a>
                             </li>
-                            <li class="btn menu" data-link="#about">
+                            <!-- About -->
+                            <li class="nav-item menu" data-link="#about">
                                 <a href="#about" class="text-wrap">
                                     <span class="origin">About</span>
-                                    <span class="origin active">About</span>
+                                    <span class="origin active" aria-hidden="true">About</span>
                                 </a>
                             </li>
-                            <li class="btn menu">
-                                <a href="https://www.instagram.com/choii__film/" target="_blank" class="text-wrap">
+                            <!-- Instagram -->
+                            <li class="nav-item menu">
+                                <a href="https://www.instagram.com/choii__film/" target="_blank" class="text-wrap"
+                                    aria-label="인스타그램 이동">
                                     <span class="origin">Instagram</span>
-                                    <span class="origin active">Instagram</span>
+                                    <span class="origin active" aria-hidden="true">Instagram</span>
                                 </a>
                             </li>
-                            <li class="btn letter">
-                                <button class="btn-primary monthly-letter">
+                            <!-- Monthly Letter -->
+                            <li class="nav-item letter">
+                                <button class="btn-primary monthly-letter" aria-expanded="false"
+                                    aria-controls="monthly-letter">
                                     <span class="text-wrap">
                                         <span class="origin">Monthly Letter</span>
                                         <span class="origin active">Monthly Letter</span>
@@ -102,6 +119,7 @@
                         </ul>
                     </div>
                 </div>
+                <!-- // MOBILE NAV -->
             </div>
         </header>
         <!-- // header -->
@@ -129,77 +147,113 @@
                         <div class="sticky-container">
                             <div class="sticky-box">
                                 <div class="main-scroll">
+                                    <!-- Main 시퀀스 + BEST CUT 1. 홋카이도 크리스마스 트리 -->
                                     <div class="content-box">
                                         <div class="main-frame">
-                                            <!-- title -->
-                                            <div class="frame-title">Film 19</div>
-                                            <!-- figure -->
+                                            <!-- BEST CUT 1. title -->
+                                            <h3 class="frame-title">Film 19</h3>
+                                            <!-- Figure Box -->
                                             <div class="area-figure">
-                                                <div class="figure sequence">
+                                                <!-- main sequence -->
+                                                <div class="figure sequence" aria-hidden="true">
                                                     <div class="overlay"></div>
-                                                    <img src="images/film02.png" alt="" class="active">
-                                                    <img src="images/film03.png" alt="">
-                                                    <img src="images/film04.png" alt="">
-                                                    <img src="images/film05.png" alt="">
-                                                    <img src="images/film06.png" alt="">
-                                                    <img src="images/film07.png" alt="">
-                                                    <img src="images/film09.png" alt="">
-                                                    <img src="images/film11.png" alt="">
-                                                    <img src="images/film12.png" alt="">
-                                                    <img src="images/film13.png" alt="">
-                                                    <img src="images/film14.png" alt="">
-                                                    <img src="images/film15.png" alt="">
-                                                    <img src="images/film16.png" alt="">
-                                                    <img src="images/film17.png" alt="">
+                                                    <img src="images/film02.png" class="active">
+                                                    <img src="images/film03.png">
+                                                    <img src="images/film04.png">
+                                                    <img src="images/film05.png">
+                                                    <img src="images/film06.png">
+                                                    <img src="images/film07.png">
+                                                    <img src="images/film09.png">
+                                                    <img src="images/film11.png">
+                                                    <img src="images/film12.png">
+                                                    <img src="images/film13.png">
+                                                    <img src="images/film14.png">
+                                                    <img src="images/film15.png">
+                                                    <img src="images/film16.png">
+                                                    <img src="images/film17.png">
                                                 </div>
+                                                <!-- BEST CUT 1. -->
                                                 <div class="figure best-one">
-                                                    <img src="images/film19.png" alt="삿포로 나홀로나무">
+                                                    <img src="images/film19.png" alt="홋카이도 크리스마스 트리">
                                                 </div>
                                             </div>
-                                            <!-- BEST CUT 1. 삿포로 나홀로나무 film data -->
+                                            <!-- BEST CUT 1. film data -->
                                             <div class="frame-data">
-                                                <p>Canon R50 18-45mm</p>
-                                                <p><span class="unit">ISO 200</span><span class="unit">F8</span
-                                                        class="unit"><span>1/125s</span></p>
+                                                <dl>
+                                                    <dt class="sr-only">카메라 기종</dt>
+                                                    <dd class="unit">Canon R50 18-45mm</dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt class="sr-only">ISO</dt>
+                                                    <dd class="unit">ISO 200</dd>
+
+                                                    <dt class="sr-only">조리개</dt>
+                                                    <dd class="unit">F8</dd>
+
+                                                    <dt class="sr-only">셔터스피드</dt>
+                                                    <dd class="unit">1/125s</dd>
+                                                </dl>
                                             </div>
                                         </div>
 
                                     </div>
-                                    <!-- BEST CUT 2. 강릉 강문해변 film data -->
+                                    <!-- BEST CUT 2. 강릉 강문해변 -->
                                     <div class="content-box">
                                         <div class="main-frame">
-                                            <!-- info -->
+                                            <!-- BEST CUT 2. title -->
                                             <h3 class="frame-title">Film 04</h3>
-                                            <!-- figure -->
+                                            <!-- Figure Box -->
                                             <div class="area-figure">
                                                 <div class="figure best-two">
                                                     <img src="images/film04.png" alt="강릉 강문해변">
                                                 </div>
                                             </div>
-                                            <!-- data -->
+                                            <!-- BEST CUT 2. film data -->
                                             <div class="frame-data">
-                                                <p>Canon R50 18-45mm</p>
-                                                <p><span class="unit">ISO 100</span><span class="unit">F11</span
-                                                        class="unit"><span>1/500s</span></p>
+                                                <dl>
+                                                    <dt class="sr-only">카메라 기종</dt>
+                                                    <dd class="unit">Canon R50 18-45mm</dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt class="sr-only">ISO</dt>
+                                                    <dd class="unit">ISO 100</dd>
+
+                                                    <dt class="sr-only">조리개</dt>
+                                                    <dd class="unit">F11</dd>
+
+                                                    <dt class="sr-only">셔터스피드</dt>
+                                                    <dd class="unit">1/500s</dd>
+                                                </dl>
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- BEST CUT 3. 대만 일상의 거리 film data -->
+                                    <!-- BEST CUT 3. 대만의 일상  -->
                                     <div class="content-box">
                                         <div class="main-frame">
-                                            <!-- info -->
+                                            <!-- BEST CUT 3. title -->
                                             <div class="frame-title">Film 03</div>
-                                            <!-- figure -->
+                                            <!-- Figure Box -->
                                             <div class="area-figure">
                                                 <div class="figure best-three">
-                                                    <img src="images/film03.png" alt="대만 일상의 거리">
+                                                    <img src="images/film03.png" alt="대만의 일상">
                                                 </div>
                                             </div>
-                                            <!-- data -->
+                                            <!-- BEST CUT 3. film data -->
                                             <div class="frame-data">
-                                                <p>Canon R50 18-45mm</p>
-                                                <p><span class="unit">ISO 100</span><span class="unit">F11</span
-                                                        class="unit"><span>1/1000s</span></p>
+                                                <dl>
+                                                    <dt class="sr-only">카메라 기종</dt>
+                                                    <dd class="unit">Canon R50 18-45mm</dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt class="sr-only">ISO</dt>
+                                                    <dd class="unit">ISO 100</dd>
+
+                                                    <dt class="sr-only">조리개</dt>
+                                                    <dd class="unit">F11</dd>
+
+                                                    <dt class="sr-only">셔터스피드</dt>
+                                                    <dd class="unit">1/1000s</dd>
+                                                </dl>
                                             </div>
                                         </div>
                                     </div>
@@ -213,8 +267,9 @@
 
             <!-- COMMENT -->
             <section class="sc-comment" id="comment">
+                <h2 class="sr-only">초이스 아카이브 코멘트</h2>
                 <div class="inner sticky-wrap">
-                    <div class="group-line top">
+                    <div class="group-line top" aria-hidden="true">
                         <div class="motion-line">
                             <div class="line"></div>
                             <i class="ic-flower">
@@ -252,31 +307,31 @@
                     <div class="group-comment">
                         <div class="comment-wrap first">
                             <div class="comment-box ">
-                                <span class="comment-line">사진을 이어붙이면 영상이 되고, 영원을 바라는 찰나들이 모이면 기억 속에 머물게 됩니다.</span>
+                                <p class="comment-line">사진을 이어붙이면 영상이 되고, 영원을 바라는 찰나들이 모이면 기억 속에 머물게 됩니다.</p>
                             </div>
                             <div class="comment-box">
-                                <span class="comment-line">일상 속 예상치 못한 빛과 그림자에 마음을 빼앗겨, 그 순간들을 오래 간직하고자 셔터를
-                                    눌렀습니다.</span>
+                                <p class="comment-line">일상 속 예상치 못한 빛과 그림자에 마음을 빼앗겨, 그 순간들을 오래 간직하고자 셔터를
+                                    눌렀습니다.</p>
                             </div>
                             <div class="comment-box">
-                                <span class="comment-line">특별할 것 없는 사진일지라도, 누군가에게는 작은 선물이 되길 바라며 오늘도 조용히 필름을
-                                    채워갑니다.</span>
+                                <p class="comment-line">특별할 것 없는 사진일지라도, 누군가에게는 작은 선물이 되길 바라며 오늘도 조용히 필름을
+                                    채워갑니다.</p>
                             </div>
                         </div>
                         <div class="comment-wrap second">
                             <div class="comment-box">
-                                <span class="comment-line">제 사진에는 거창한 의미도, 화려한 연출도 없습니다.</span>
+                                <p class="comment-line">제 사진에는 거창한 의미도, 화려한 연출도 없습니다.</p>
                             </div>
                             <div class="comment-box">
-                                <span class="comment-line">그저 마음을 비우고 가볍게 바라봐 주세요.</span>
+                                <p class="comment-line">그저 마음을 비우고 가볍게 바라봐 주세요.</p>
                             </div>
                             <div class="comment-box">
-                                <span class="comment-line">여기, 몰래 담아온 순간들을 두고 갑니다. <br class="hidden">그렇게 담아온 순간들이 오래도록
-                                    기억되길.</span>
+                                <p class="comment-line">여기, 몰래 담아온 순간들을 두고 갑니다. <br class="hidden">그렇게 담아온 순간들이 오래도록
+                                    기억되길.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="group-line bottom">
+                    <div class="group-line bottom" aria-hidden="true">
                         <div class="motion-line">
                             <div class="line"></div>
                             <i class="ic-flower">
@@ -311,7 +366,6 @@
                             <div class="line"></div>
                         </div>
                     </div>
-
                 </div>
             </section>
             <!-- // COMMENT -->
@@ -323,14 +377,10 @@
                         <div class="group-title">
                             <h2><span class="text ko">여운</span><span class="text ch">[餘韻]</span></h2>
                             <div class="desc-box">
-                                <p class="desc">
-                                    :&nbsp;아직&nbsp;가시지&nbsp;않고&nbsp;남아&nbsp;있는&nbsp;운치</p>
-                                <p class="desc">
-                                    :&nbsp;어떤&nbsp;일이&nbsp;있은&nbsp;뒤에&nbsp;마음&nbsp;속에&nbsp;남아&nbsp;있는&nbsp;느낌이나&nbsp;감정
-                                </p>
+                                <p class="desc">아직 가시지 않고 남아 있는 운치</p>
+                                <p class="desc">어떤 일이 있은 뒤에 마음 속에 남아 있는 느낌이나 감정</p>
                             </div>
                         </div>
-                        <!-- <div class="group-film"></div> -->
                     </div>
                     <div class="group-film">
                         <!-- film 01 : 빈 자리-->
@@ -340,9 +390,20 @@
                                 <img src="./images/film15.png" alt="빈 자리">
                             </div>
                             <div class="frame-data">
-                                <p>Canon R50 18-45mm</p>
-                                <p><span class="unit">ISO 400</span><span class="unit">F2.8</span
-                                        class="unit"><span>1/250s</span></p>
+                                <dl>
+                                    <dt class="sr-only">카메라 기종</dt>
+                                    <dd class="unit">Canon R50 18-45mm</dd>
+                                </dl>
+                                <dl>
+                                    <dt class="sr-only">ISO</dt>
+                                    <dd class="unit">ISO 400</dd>
+
+                                    <dt class="sr-only">조리개</dt>
+                                    <dd class="unit">F2.8</dd>
+
+                                    <dt class="sr-only">셔터스피드</dt>
+                                    <dd class="unit">1/250s</dd>
+                                </dl>
                             </div>
                         </div>
                         <!-- film 02 : 문래동 상진 다방-->
@@ -352,21 +413,43 @@
                                 <img src="./images/film07.png" alt="문래동 상진 다방">
                             </div>
                             <div class="frame-data">
-                                <p>Canon R50 18-45mm</p>
-                                <p><span class="unit">ISO 100</span><span class="unit">F5.6</span
-                                        class="unit"><span>1/1000s</span></p>
+                                <dl>
+                                    <dt class="sr-only">카메라 기종</dt>
+                                    <dd class="unit">Canon R50 18-45mm</dd>
+                                </dl>
+                                <dl>
+                                    <dt class="sr-only">ISO</dt>
+                                    <dd class="unit">ISO 100</dd>
+
+                                    <dt class="sr-only">조리개</dt>
+                                    <dd class="unit">F5.6</dd>
+
+                                    <dt class="sr-only">셔터스피드</dt>
+                                    <dd class="unit">1/1000s</dd>
+                                </dl>
                             </div>
                         </div>
-                        <!-- film 03 : 눈 덮힌 자전거와 넘어진 자전거-->
+                        <!-- film 03 : 겨울의 흔적-->
                         <div class="frame-box">
                             <h3 class="frame-title">Film03</h3>
                             <div class="frame-img">
-                                <img src="./images/film06.png" alt="눈 덮힌 자전거와 넘어진 자전거">
+                                <img src="./images/film06.png" alt="겨울의 흔적">
                             </div>
                             <div class="frame-data">
-                                <p>Canon R50 18-45mm</p>
-                                <p><span class="unit">ISO 200</span><span class="unit">F5.6</span
-                                        class="unit"><span>1/200s</span></p>
+                                <dl>
+                                    <dt class="sr-only">카메라 기종</dt>
+                                    <dd class="unit">Canon R50 18-45mm</dd>
+                                </dl>
+                                <dl>
+                                    <dt class="sr-only">ISO</dt>
+                                    <dd class="unit">ISO 200</dd>
+
+                                    <dt class="sr-only">조리개</dt>
+                                    <dd class="unit">F5.6</dd>
+
+                                    <dt class="sr-only">셔터스피드</dt>
+                                    <dd class="unit">1/200s</dd>
+                                </dl>
                             </div>
                         </div>
                         <!-- film 04 : 강릉 강문해변-->
@@ -376,22 +459,43 @@
                                 <img src="./images/film04.png" alt="강릉 강문해변">
                             </div>
                             <div class="frame-data">
-                                <p>Canon R50 18-45mm</p>
-                                <p><span class="unit">ISO 100</span><span class="unit">F11</span
-                                        class="unit"><span>1/500s</span></p>
+                                <dl>
+                                    <dt class="sr-only">카메라 기종</dt>
+                                    <dd class="unit">Canon R50 18-45mm</dd>
+                                </dl>
+                                <dl>
+                                    <dt class="sr-only">ISO</dt>
+                                    <dd class="unit">ISO 100</dd>
+
+                                    <dt class="sr-only">조리개</dt>
+                                    <dd class="unit">F11</dd>
+
+                                    <dt class="sr-only">셔터스피드</dt>
+                                    <dd class="unit">1/500s</dd>
+                                </dl>
                             </div>
                         </div>
-                        <!-- film 05 : 아늑한 아지트 -->
+                        <!-- film 05 : 창가 -->
                         <div class="frame-box">
                             <h3 class="frame-title">Film05</h3>
                             <div class="frame-img">
-                                <img src="./images/film10.png" alt="아늑한 아지트">
+                                <img src="./images/film10.png" alt="창가">
                             </div>
                             <div class="frame-data">
-                                <p>Canon R50 18-45mm</p>
-                                <p><span class="unit">ISO 200</span><span class="unit">F5.6</span
-                                        class="unit"><span>1/640s</span></p>
+                                <dl>
+                                    <dt class="sr-only">카메라 기종</dt>
+                                    <dd class="unit">Canon R50 18-45mm</dd>
+                                </dl>
+                                <dl>
+                                    <dt class="sr-only">ISO</dt>
+                                    <dd class="unit">ISO 200</dd>
 
+                                    <dt class="sr-only">조리개</dt>
+                                    <dd class="unit">F5.6</dd>
+
+                                    <dt class="sr-only">셔터스피드</dt>
+                                    <dd class="unit">1/640s</dd>
+                                </dl>
                             </div>
                         </div>
                         <!-- film 06 : 대관람차-->
@@ -401,33 +505,66 @@
                                 <img src="./images/film12.png" alt="대관람차">
                             </div>
                             <div class="frame-data">
-                                <p>Canon R50 18-45mm</p>
-                                <p><span class="unit">ISO 100</span><span class="unit">F8</span
-                                        class="unit"><span>1/1000s</span></p>
+                                <dl>
+                                    <dt class="sr-only">카메라 기종</dt>
+                                    <dd class="unit">Canon R50 18-45mm</dd>
+                                </dl>
+                                <dl>
+                                    <dt class="sr-only">ISO</dt>
+                                    <dd class="unit">ISO 100</dd>
+
+                                    <dt class="sr-only">조리개</dt>
+                                    <dd class="unit">F8</dd>
+
+                                    <dt class="sr-only">셔터스피드</dt>
+                                    <dd class="unit">1/1000s</dd>
+                                </dl>
                             </div>
                         </div>
-                        <!-- film 07 : 머리 위를 지나는 비행기 -->
+                        <!-- film 07 : 찰나의 순간 -->
                         <div class="frame-box">
                             <h3 class="frame-title">Film07</h3>
                             <div class="frame-img">
-                                <img src="./images/film18.png" alt="머리 위를 지나는 비행기">
+                                <img src="./images/film18.png" alt="찰나의 순간">
                             </div>
                             <div class="frame-data">
-                                <p>Canon R50 18-45mm</p>
-                                <p><span class="unit">ISO 100</span><span class="unit">F5.6</span
-                                        class="unit"><span>1/1250s</span></p>
+                                <dl>
+                                    <dt class="sr-only">카메라 기종</dt>
+                                    <dd class="unit">Canon R50 18-45mm</dd>
+                                </dl>
+                                <dl>
+                                    <dt class="sr-only">ISO</dt>
+                                    <dd class="unit">ISO 100</dd>
+
+                                    <dt class="sr-only">조리개</dt>
+                                    <dd class="unit">F5.6</dd>
+
+                                    <dt class="sr-only">셔터스피드</dt>
+                                    <dd class="unit">1/1250s</dd>
+                                </dl>
                             </div>
                         </div>
-                        <!-- film 08 : 대만 일상의 거리-->
+                        <!-- film 08 : 대만의 일상-->
                         <div class="frame-box">
                             <h3 class="frame-title">Film08</h3>
                             <div class="frame-img">
-                                <img src="./images/film03.png" alt="대만 일상의 거리">
+                                <img src="./images/film03.png" alt="대만의 일상">
                             </div>
                             <div class="frame-data">
-                                <p>Canon R50 18-45mm</p>
-                                <p><span class="unit">ISO 100</span><span class="unit">F11</span
-                                        class="unit"><span>1/1000s</span></p>
+                                <dl>
+                                    <dt class="sr-only">카메라 기종</dt>
+                                    <dd class="unit">Canon R50 18-45mm</dd>
+                                </dl>
+                                <dl>
+                                    <dt class="sr-only">ISO</dt>
+                                    <dd class="unit">ISO 100</dd>
+
+                                    <dt class="sr-only">조리개</dt>
+                                    <dd class="unit">F11</dd>
+
+                                    <dt class="sr-only">셔터스피드</dt>
+                                    <dd class="unit">1/1000s</dd>
+                                </dl>
                             </div>
                         </div>
                         <!-- film 09 : 한강에서-->
@@ -437,9 +574,20 @@
                                 <img src="./images/film11.png" alt="한강에서">
                             </div>
                             <div class="frame-data">
-                                <p>Canon R50 18-45mm</p>
-                                <p><span class="unit">ISO 100</span><span class="unit">F5.6</span
-                                        class="unit"><span>1/800s</span></p>
+                                <dl>
+                                    <dt class="sr-only">카메라 기종</dt>
+                                    <dd class="unit">Canon R50 18-45mm</dd>
+                                </dl>
+                                <dl>
+                                    <dt class="sr-only">ISO</dt>
+                                    <dd class="unit">ISO 100</dd>
+
+                                    <dt class="sr-only">조리개</dt>
+                                    <dd class="unit">F5.6</dd>
+
+                                    <dt class="sr-only">셔터스피드</dt>
+                                    <dd class="unit">1/800s</dd>
+                                </dl>
                             </div>
                         </div>
                         <!-- film 10 : 홋카이도 기차역-->
@@ -449,9 +597,20 @@
                                 <img src="./images/film13.png" alt="홋카이도 기차역">
                             </div>
                             <div class="frame-data">
-                                <p>Canon R50 18-45mm</p>
-                                <p><span class="unit">ISO 800</span><span class="unit">F2.8</span
-                                        class="unit"><span>1/100s</span></p>
+                                <dl>
+                                    <dt class="sr-only">카메라 기종</dt>
+                                    <dd class="unit">Canon R50 18-45mm</dd>
+                                </dl>
+                                <dl>
+                                    <dt class="sr-only">ISO</dt>
+                                    <dd class="unit">ISO 800</dd>
+
+                                    <dt class="sr-only">조리개</dt>
+                                    <dd class="unit">F2.8</dd>
+
+                                    <dt class="sr-only">셔터스피드</dt>
+                                    <dd class="unit">1/100s</dd>
+                                </dl>
                             </div>
                         </div>
                         <!-- film 11 : 교토의 거리 -->
@@ -461,33 +620,66 @@
                                 <img src="./images/film02.png" alt="교토의 거리">
                             </div>
                             <div class="frame-data">
-                                <p>Canon R50 18-45mm</p>
-                                <p><span class="unit">ISO 200</span><span class="unit">F8</span
-                                        class="unit"><span>1/60s</span></p>
+                                <dl>
+                                    <dt class="sr-only">카메라 기종</dt>
+                                    <dd class="unit">Canon R50 18-45mm</dd>
+                                </dl>
+                                <dl>
+                                    <dt class="sr-only">ISO</dt>
+                                    <dd class="unit">ISO 200</dd>
+
+                                    <dt class="sr-only">조리개</dt>
+                                    <dd class="unit">F8</dd>
+
+                                    <dt class="sr-only">셔터스피드</dt>
+                                    <dd class="unit">1/60s</dd>
+                                </dl>
                             </div>
                         </div>
-                        <!-- film 12 : 대만의 일상-->
+                        <!-- film 12 : 대만의 일상2 -->
                         <div class="frame-box">
                             <h3 class="frame-title">Film12</h3>
                             <div class="frame-img">
-                                <img src="./images/film09.png" alt="대만의 일상">
+                                <img src="./images/film09.png" alt="대만의 일상2">
                             </div>
                             <div class="frame-data">
-                                <p>Canon R50 18-45mm</p>
-                                <p><span class="unit">ISO 100</span><span class="unit">F8</span
-                                        class="unit"><span>1/200s</span></p>
+                                <dl>
+                                    <dt class="sr-only">카메라 기종</dt>
+                                    <dd class="unit">Canon R50 18-45mm</dd>
+                                </dl>
+                                <dl>
+                                    <dt class="sr-only">ISO</dt>
+                                    <dd class="unit">ISO 100</dd>
+
+                                    <dt class="sr-only">조리개</dt>
+                                    <dd class="unit">F8</dd>
+
+                                    <dt class="sr-only">셔터스피드</dt>
+                                    <dd class="unit">1/200s</dd>
+                                </dl>
                             </div>
                         </div>
-                        <!-- film 13 : 제주도 돌담-->
+                        <!-- film 13 : 제주의 기억-->
                         <div class="frame-box">
                             <h3 class="frame-title">Film13</h3>
                             <div class="frame-img">
-                                <img src="./images/film16.png" alt="제주도 돌담">
+                                <img src="./images/film16.png" alt="제주의 기억">
                             </div>
                             <div class="frame-data">
-                                <p>Canon R50 18-45mm</p>
-                                <p><span class="unit">ISO 100</span><span class="unit">F8</span
-                                        class="unit"><span>1/500s</span></p>
+                                <dl>
+                                    <dt class="sr-only">카메라 기종</dt>
+                                    <dd class="unit">Canon R50 18-45mm</dd>
+                                </dl>
+                                <dl>
+                                    <dt class="sr-only">ISO</dt>
+                                    <dd class="unit">ISO 100</dd>
+
+                                    <dt class="sr-only">조리개</dt>
+                                    <dd class="unit">F8</dd>
+
+                                    <dt class="sr-only">셔터스피드</dt>
+                                    <dd class="unit">1/500s</dd>
+                                </dl>
                             </div>
                         </div>
                         <!-- film 14 : 윤슬 -->
@@ -497,9 +689,20 @@
                                 <img src="./images/film17.png" alt="윤슬">
                             </div>
                             <div class="frame-data">
-                                <p>Canon R50 18-45mm</p>
-                                <p><span class="unit">ISO 100</span><span class="unit">F7.1</span
-                                        class="unit"><span>1/1000s</span></p>
+                                <dl>
+                                    <dt class="sr-only">카메라 기종</dt>
+                                    <dd class="unit">Canon R50 18-45mm</dd>
+                                </dl>
+                                <dl>
+                                    <dt class="sr-only">ISO</dt>
+                                    <dd class="unit">ISO 100</dd>
+
+                                    <dt class="sr-only">조리개</dt>
+                                    <dd class="unit">F7.1</dd>
+
+                                    <dt class="sr-only">셔터스피드</dt>
+                                    <dd class="unit">1/1000s</dd>
+                                </dl>
                             </div>
                         </div>
                         <!-- film 15 : 검은 고양이 친구 둘-->
@@ -509,9 +712,20 @@
                                 <img src="./images/film01.png" alt="검은 고양이 친구 둘">
                             </div>
                             <div class="frame-data">
-                                <p>Canon R50 18-45mm</p>
-                                <p><span class="unit">ISO 100</span><span class="unit">F2.8</span
-                                        class="unit"><span>1/500s</span></p>
+                                <dl>
+                                    <dt class="sr-only">카메라 기종</dt>
+                                    <dd class="unit">Canon R50 18-45mm</dd>
+                                </dl>
+                                <dl>
+                                    <dt class="sr-only">ISO</dt>
+                                    <dd class="unit">ISO 100</dd>
+
+                                    <dt class="sr-only">조리개</dt>
+                                    <dd class="unit">F2.8</dd>
+
+                                    <dt class="sr-only">셔터스피드</dt>
+                                    <dd class="unit">1/500s</dd>
+                                </dl>
                             </div>
                         </div>
                         <!-- film 16 : 거제 몽돌해변 -->
@@ -521,43 +735,79 @@
                                 <img src="./images/film05.png" alt="거제 몽돌해변">
                             </div>
                             <div class="frame-data">
-                                <p>Canon R50 18-45mm</p>
-                                <p><span class="unit">ISO 100</span><span class="unit">F4.5</span
-                                        class="unit"><span>1/800s</span></p>
+                                <dl>
+                                    <dt class="sr-only">카메라 기종</dt>
+                                    <dd class="unit">Canon R50 18-45mm</dd>
+                                </dl>
+                                <dl>
+                                    <dt class="sr-only">ISO</dt>
+                                    <dd class="unit">ISO 100</dd>
+
+                                    <dt class="sr-only">조리개</dt>
+                                    <dd class="unit">F4.5</dd>
+
+                                    <dt class="sr-only">셔터스피드</dt>
+                                    <dd class="unit">1/800s</dd>
+                                </dl>
                             </div>
                         </div>
-                        <!-- film 17 : 교토 카모메 강-->
+                        <!-- film 17 : 교토 카모 강-->
                         <div class="frame-box">
                             <h3 class="frame-title">Film17</h3>
                             <div class="frame-img">
-                                <img src="./images/film20.png" alt="교토 카모메 강">
+                                <img src="./images/film20.png" alt="교토 카모 강">
                             </div>
                             <div class="frame-data">
-                                <p>Canon R50 18-45mm</p>
-                                <p><span class="unit">ISO 100</span><span class="unit">F5.6</span
-                                        class="unit"><span>1/500s</span></p>
+                                <dl>
+                                    <dt class="sr-only">카메라 기종</dt>
+                                    <dd class="unit">Canon R50 18-45mm</dd>
+                                </dl>
+                                <dl>
+                                    <dt class="sr-only">ISO</dt>
+                                    <dd class="unit">ISO 100</dd>
+
+                                    <dt class="sr-only">조리개</dt>
+                                    <dd class="unit">F5.6</dd>
+
+                                    <dt class="sr-only">셔터스피드</dt>
+                                    <dd class="unit">1/500s</dd>
+                                </dl>
                             </div>
                         </div>
-                        <!-- film 18 : 삿포로 나홀로 나무 -->
+                        <!-- film 18 : 홋카이도 크리스마스 트리 -->
                         <div class="frame-box">
                             <h3 class="frame-title">Film18</h3>
                             <div class="frame-img">
-                                <img src="./images/film19.png" alt="삿포로 나홀로 나무">
+                                <img src="./images/film19.png" alt="홋카이도 크리스마스 트리">
                             </div>
                             <div class="frame-data">
-                                <p>Canon R50 18-45mm</p>
-                                <p><span class="unit">ISO 200</span><span class="unit">F5.6</span
-                                        class="unit"><span>1/125s</span></p>
+                                <dl>
+                                    <dt class="sr-only">카메라 기종</dt>
+                                    <dd class="unit">Canon R50 18-45mm</dd>
+                                </dl>
+                                <dl>
+                                    <dt class="sr-only">ISO</dt>
+                                    <dd class="unit">ISO 200</dd>
+
+                                    <dt class="sr-only">조리개</dt>
+                                    <dd class="unit">F5.6</dd>
+
+                                    <dt class="sr-only">셔터스피드</dt>
+                                    <dd class="unit">1/125s</dd>
+                                </dl>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+            <!-- // FILM -->
 
             <!-- ABOUT -->
             <section class="sc-about" id="about">
+                <h2 class="sr-only">포토그래퍼 초이 인사말</h2>
+
                 <div class="inner">
-                    <div class="group-head">
+                    <div class="group-head" aria-hidden="true">
                         <div class="motion-line">
                             <div class="line"></div>
                             <i class="ic-flower">
@@ -601,41 +851,65 @@
 
                         <div class="comment-wrap">
                             <div class="comment-box ">
-                                <span class="comment-line">사실, 휘황찬란한 색들이 넘실거리는 세상의 소음으로부터 벗어나고 싶었어요.</span>
+                                <p class="comment-line">사실, 휘황찬란한 색들이 넘실거리는 세상의 소음으로부터 벗어나고 싶었어요.</p>
                             </div>
                             <div class="comment-box">
-                                <span class="comment-line">그때 우연히 흑백사진을 접했고, 그 속에서 고요함과 정제된 아름다움을 느꼈죠.</span>
+                                <p class="comment-line">그때 우연히 흑백사진을 접했고, 그 속에서 고요함과 정제된 아름다움을 느꼈죠.</p>
                             </div>
                             <div class="comment-box">
-                                <span class="comment-line">색을 지운 세상에서만 느낄 수 있는 여운에 매료되어, 저는 세상을 흑백으로 담기 시작했습니다.</span>
+                                <p class="comment-line">색을 지운 세상에서만 느낄 수 있는 여운에 매료되어, 저는 세상을 흑백으로 담기 시작했습니다.</p>
                             </div>
                             <div class="comment-box">
-                                <span class="comment-line">비록 전문적인 장비나 기술은 부족했지만, 셔터를 누를 때마다 행복은 커져만 갔습니다.
-                                </span>
+                                <p class="comment-line">비록 전문적인 장비나 기술은 부족했지만, 셔터를 누를 때마다 행복은 커져만 갔습니다.
+                                </p>
                             </div>
                             <div class="comment-box">
-                                <span class="comment-line">앞으로도 행복한 순간들을 담아내며, 새로운 아름다움을 계속 발견해 가겠습니다.
-                                </span>
+                                <p class="comment-line">앞으로도 행복한 순간들을 담아내며, 새로운 아름다움을 계속 발견해 가겠습니다.
+                                </p>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
+            <!-- // ABOUT -->
 
             <!-- MONTHLY LETTER -->
             <section class="sc-letter" id="monthly-letter">
                 <div class="inner">
-                    <button class="btn btn-close btn-primary">
+                    <!-- 모바일 닫기 버튼 -->
+                    <button class="btn btn-close btn-primary" aria-label="Monthly letter 닫기"
+                        aria-controls="monthly-letter">
                         <span class="text-wrap">
                             <span class="origin">Close</span>
-                            <span class="origin active">Close</span>
+                            <span class="origin active" aria-hidden="true">Close</span>
                         </span>
                     </button>
+                    <!-- vol 06. 윤슬 -->
                     <div class="frame-box">
-                        <img src="./images/film17.png" alt="윤슬">
+                        <h3 class="frame-title">Film14</h3>
+                        <div class="frame-img">
+                            <img src="./images/film17.png" alt="윤슬">
+                        </div>
+                        <div class="frame-data">
+                            <dl>
+                                <dt class="sr-only">카메라 기종</dt>
+                                <dd class="unit">Canon R50 18-45mm</dd>
+                            </dl>
+                            <dl>
+                                <dt class="sr-only">ISO</dt>
+                                <dd class="unit">ISO 100</dd>
+
+                                <dt class="sr-only">조리개</dt>
+                                <dd class="unit">F7.1</dd>
+
+                                <dt class="sr-only">셔터스피드</dt>
+                                <dd class="unit">1/1000s</dd>
+                            </dl>
+                        </div>
                     </div>
-                    <div class="line"></div>
+
+                    <div class="line" aria-hidden="true"><span class="sr-only">구분선</span></div>
+
                     <div class="area-comment">
                         <div class="paper">
                             <p class="desc">월간레터 Vol. 6</p>
@@ -648,7 +922,7 @@
                                 <br>올해 초에 소망하고 계획했던 일들은 하나씩 이루어가고 계신가요?
                                 <br>혹시 그 목표들에서 조금 멀어졌더라도, 너무 낙담하지 않으셨으면 해요.
                                 <br>그만큼 지금 하고 있는 일에 더 깊이 몰입하셨다는 뜻일지도 모르니까요.
-                                <br>그것만으로도 충분히 잘하고 계신 거예요. :-&#41;
+                                <br>그것만으로도 충분히 잘하고 계신 거예요.<span aria-hidden="true">:-&#41;</span>
                             </p>
                             <p class="desc">
                                 저는 지금, 5월의 끝자락에서 선선한 밤공기를 느끼며 이 글을 쓰고 있습니다.
@@ -658,8 +932,7 @@
                                 집을 나서자마자 담벼락 너머 만개한 능소화가 눈에 들어왔고, 셔터를 마구 눌러 필름에 가득 담았어요.
                                 너무 예쁜 장면이라 혼자 보기 아까워 사진을 인화해 그 꽃이 피어 있던 집들의 우편함마다 한 장씩 꽂아두고, 짧은 메시지를 함께 적어두었어요.
                                 <br>‘요즘엔 외출할 때마다 큰 꽃다발 선물을 받는 기분이에요. 여기 피어있는 능소화 덕분에요. 멀리서 보면 이렇게나 예쁘답니다. 가끔은 주위를 둘러보며
-                                마음 한
-                                켠에 아름다움을 채워가셨으면 좋겠습니다.’ 사진을 받으신 분들의 반응은 알 수 없었지만, 그날 저는 확실히 알게 된 것이 하나 있어요.
+                                마음 한켠에 아름다움을 채워가셨으면 좋겠습니다.’ 사진을 받으신 분들의 반응은 알 수 없었지만, 그날 저는 확실히 알게 된 것이 하나 있어요.
                                 내가 좋아하는 것을 누군가와 나누는 일은 참 기분 좋은 일이라는 걸요.
                                 저는 그 후로도 종종 사진을 선물해 왔고, 그럴 때마다 “뜻밖의 선물 덕분에 행복하다.”는 말을 들었습니다.
                                 그런 말을 들을 때면 저도 마음 한 켠이 따뜻해지며, ‘나는 사진을 선물하는 게 아니라 잠깐의 소소한 행복을 나누고 있구나.’라는 생각이 들더라구요.
@@ -692,17 +965,19 @@
     <!-- Footer -->
     <footer id="footer">
         <div class="inner">
-            <h2><span>Read the Monthly Letter?</span></h2>
+            <h2>Read the Monthly Letter?</h2>
             <div class="btn-box">
-                <a href="https://www.instagram.com/choii__film/" target="_blank" class="btn-primary white">Get
-                    in
-                    Touch</a>
+                <a href="https://www.instagram.com/choii__film/" target="_blank" class="btn-primary white"
+                    aria-label="인스타그램 이동">Get
+                    in Touch</a>
             </div>
             <ul class="footer-menu">
-                <li><a href="mailto:choii_ii@icloud.com" class="link-sns">Mail</a></li>
-                <li><a href="https://www.instagram.com/choii__film/" target="_blank" class="link-sns">Instagram</a>
+                <li><a href="mailto:choii_ii@icloud.com" class="link-sns" aria-label="메일 보내기">Mail</a></li>
+                <li><a href="https://www.instagram.com/choii__film/" target="_blank" class="link-sns"
+                        aria-label="인스타그램 이동">Instagram</a>
                 </li>
-                <li><a href="https://blog.naver.com/choii__ii" target="_blank" class="link-sns">Blog</a></li>
+                <li><a href="https://blog.naver.com/choii__ii" target="_blank" class="link-sns"
+                        aria-label="블로그 이동">Blog</a></li>
             </ul>
             <div class="copyright-box">
                 <small class="copyright">© CHOII. All rights reserved.</small>
@@ -712,7 +987,6 @@
     </footer>
     <script src="./js/common.js"></script>
     <script src="./js/index.js"></script>
-
 </body>
 
 </html>
