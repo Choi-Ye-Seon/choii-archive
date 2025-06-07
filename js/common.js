@@ -1,11 +1,28 @@
-let mediaQuery = gsap.matchMedia();
-
 //  미디어쿼리
 let mediaQueryPC = window.matchMedia('(min-width:1201px)');
 let mediaQueryMO = window.matchMedia('(max-width:1200px)');
 
+// 변수 선언
+const noise = document.querySelector('.noise');
+const header = document.querySelector("#header");
 
-// Smooth scroll (Lenis)
+// 🌟 모바일 header, 모바일 nav 변수 선언
+const mobileMenuBtn = header.querySelector('#mobile-menu');
+const mobileNav = header.querySelector('.mobile-nav');
+const mobileNavBox = mobileNav.querySelector('ul');
+const mobileLogo = header.querySelector('.link-home');
+const mobileBtnBar = mobileMenuBtn.querySelectorAll('span');
+
+// 🌟 Monthly Letter 변수 선언
+const letterViewer = document.querySelector("#monthly-letter");
+const letterBtn = header.querySelector('.pc-letter button.monthly-letter');
+const letterBtnMo = header.querySelector('.mobile-nav button.monthly-letter');
+const closeBtn = document.querySelector('#header button.btn-close');
+const closeBtnMo = letterViewer.querySelector('button.btn-close');
+
+
+
+// 1. Smooth scroll (Lenis)
 const lenis = new Lenis();
 lenis.on('scroll', ScrollTrigger.update);
 gsap.ticker.add((time) => {
@@ -13,18 +30,18 @@ gsap.ticker.add((time) => {
 });
 gsap.ticker.lagSmoothing(500);
 
-// 새로고침 시, 스크롤 위치 변경
+
+// 2. 새로고침 시, 스크롤 위치 변경
 window.addEventListener('beforeunload', () => {
   lenis.scrollTo(0, { immediate: true });
 });
 
 
-// header scrollSpy
-const header = document.querySelector("#header");
+// 3. Header
+// 3-1. scrollSpy
 let currentScroll = 0;
 
 window.addEventListener("scroll",function(){
-//   console.log(window.pageYOffset);
   const scrollTop = window.pageYOffset;
   if(scrollTop > currentScroll && scrollTop > 300){
     gsap.to(header, {yPercent:-100, ease:"power2.out"});
@@ -35,233 +52,73 @@ window.addEventListener("scroll",function(){
 });
 
 
-
-
-
-// 모바일 header, 모바일 nav
-const mobileMenuBtn = header.querySelector('#mobile-menu');
-const mobileNav = header.querySelector('.mobile-nav');
-const mobileNavBox = mobileNav.querySelector('ul');
-const mobileLogo = header.querySelector('.link-home');
-const mobileBtnBar = mobileMenuBtn.querySelectorAll('span');
-
-
-// monthly letter
-const letterViewer = document.querySelector("#monthly-letter");
-const letterBtn = header.querySelector('.pc-letter button.monthly-letter');
-const letterBtnMo = header.querySelector('.mobile-nav button.monthly-letter');
-const closeBtn = document.querySelector('#header button.btn-close');
-const closeBtnMo = letterViewer.querySelector('button.btn-close');
-
-const noise = document.querySelector('.noise');
-
-// 모바일 메뉴 클릭
-let isMenuOpen = false;
-
-mobileMenuBtn.addEventListener('click',function(){
-  if(mediaQueryMO.matches && header.classList.contains('mobile')){
-    // const menuOpen = header.classList.toggle('fixed');
-    // document.documentElement.classList.toggle('fixed');
-    isMenuOpen = !isMenuOpen;
-
-    // header.classList.toggle('fixed', isMenuOpen);
-    document.documentElement.classList.toggle('fixed', isMenuOpen);
-
-    if(isMenuOpen){
-      gsap.set(noise,{autoAlpha:0});
-      mobileMenuBtn.classList.add('show');
-      mobileNavShow();
-    }else{
-      mobileNavHidden();
-      mobileMenuBtn.classList.remove('show');
-      gsap.set(noise,{autoAlpha:1});
-    }
-  }
-});
-
-
-
-
-
-
-// Lenis 메뉴 이동
+// 3-2. Lenis 메뉴 이동 (함수 선언)
 function handleMenuClick(e){
-  // e.preventDefault();
-  // e.stopPropagation();
   const target = e.currentTarget;
   const navData = target.dataset.link;
 
-  console.log('menu clicked:',navData);
   lenis.scrollTo(navData, { immediate: true });
 }
-
+// 3-3. header 클릭 시 (이동 함수 실행)
 const headerLogo = header.querySelector('.link-home');
 headerLogo.addEventListener('click', handleMenuClick);
 
-
-
-
-
-
+// 3-4. pc menu 클릭 시 (이동 함수 실행)
 const pcMenus = document.querySelectorAll("#nav .nav-item:not(#mobile-menu)");
 pcMenus.forEach(function(menu){
   menu.addEventListener('click', handleMenuClick);
 });
 
+
+// 4. 모바일 Header, 모바일 Nav
+// 4-1. 모바일 menu 클릭 시 (이동 함수 실행)
 const mobileMenus = document.querySelectorAll(".mobile-nav .nav-item:not(.letter)");
 mobileMenus.forEach(function(menu){
   menu.addEventListener('click', function(e){
     if(mediaQueryMO.matches){
-        // e.preventDefault();
-
       handleMenuClick(e);
+
+      // menu 클릭 시, nav 닫기
       mobileNavHidden();
+      
       gsap.set(noise,{autoAlpha:1});
       header.classList.remove('fixed');
       document.documentElement.classList.remove('fixed');
       mobileMenuBtn.classList.remove('show');
 
-        isMenuOpen = false;  // 상태 동기화
+      isMenuOpen = false; 
     }
   });
 });
 
+// 4-2. 모바일 메뉴 클릭
+let isMenuOpen = false;
 
+mobileMenuBtn.addEventListener('click',function(){
+  if(mediaQueryMO.matches && header.classList.contains('mobile')){
+    isMenuOpen = !isMenuOpen;
+    // html fixed
+    document.documentElement.classList.toggle('fixed', isMenuOpen);
 
-
-
-
-// 반응형 초기화
-// function handleResize(){
-//   if(mediaQueryPC.matches){
-//     // 모바일 메뉴 상태 초기화
-//     lenis.start();
-//     mobileMenuBtn.classList.remove('show');
-//     document.documentElement.classList.remove('mobile','fixed');
-//     header.classList.remove('mobile','fixed','viewing');
-//     gsap.set(mobileNav,{yPercent:-100, autoAlpha:0});
-//     gsap.set(mobileNavBox,{autoAlpha:0});
-//     gsap.set(mobileLogo,{color:'#000'});
-//     gsap.set(mobileBtnBar,{backgroundColor:'#000'});
-//     gsap.set(noise,{autoAlpha:1});
-
-
-//     // letter 초기화
-//     gsap.set('.sc-letter',{yPercent:-100, autoAlpha:0});
-//     gsap.set('.sc-letter .inner',{autoAlpha:0});
-//     letterViewer.style.zIndex = '10';
-
-
-
-//      // 접근성 상태 초기화
-//     letterBtn?.setAttribute('aria-expanded', 'false');
-//     letterBtnMo?.setAttribute('aria-expanded', 'false');
-//     mobileMenuBtn?.querySelector('.btn-menu')?.setAttribute('aria-expanded', 'false');
-//     // letterViewer?.setAttribute('hidden', '');
-
-//     // mobileNav?.setAttribute('hidden', '');
-
-//   }else{
-//     document.documentElement.classList.add('mobile');
-//     header.classList.add('mobile');
-//     //   gsap.set('.sc-letter',{yPercent:-100, autoAlpha:0});
-//     // gsap.set('.sc-letter .inner',{autoAlpha:0});
-//     // letterViewer.style.zIndex = '99';
-//   }
-// }
-
-// 처음 화면 크기
-let isNowPC = mediaQueryPC.matches;
-
-function handleResize(){
-
-  // 🌟 반응형 헤더
-  if (mediaQueryPC.matches) {
-  document.documentElement.classList.remove('mobile');
-  header.classList.remove('mobile');
-
-  // 1. 접근성 초기화
-  mobileMenuBtn.querySelector('.btn-menu').removeAttribute('aria-expanded');
-
-} else {
-  document.documentElement.classList.add('mobile');
-  header.classList.add('mobile');
-
-  // 1. 접근성 초기화
-  mobileMenuBtn.querySelector('.btn-menu').setAttribute('aria-expanded',"false");
-
-}
-
-
-   // 🌟 반응형 초기화 (bp 추적)
-  const isPC = mediaQueryPC.matches;
-  const isLetterOpen = letterViewer.classList.contains('open');
-  if(isPC && !isNowPC){ //지금은 pc화면이고 처음엔 mobile이었다.
-    // 모바일에서 pc로 전환
-    console.log('pc로 전환');
-
-    // 1. letter 초기화
-    if(isLetterOpen){
-      header.classList.add('viewing');
-      lenis.stop();
-      document.documentElement.classList.add('fixed');
-    }
-    letterViewer.style.zIndex = '10';
-
-    // 2. 반응형 모바일 Nav 초기화
-  // mobileNavHidden();
-    const isMobileNavOpen = mobileMenuBtn.classList.contains('show');
-    if(isMobileNavOpen && isPC){
-      mobileMenuBtn.classList.remove('show');
-      document.documentElement.classList.remove('fixed');
+    if(isMenuOpen){
+      // menu open
+      gsap.set(noise,{autoAlpha:0});
+      mobileMenuBtn.classList.add('show');
+      mobileNavShow();
+    }else{
+      // menu close
       mobileNavHidden();
+      mobileMenuBtn.classList.remove('show');
+      gsap.set(noise,{autoAlpha:1});
     }
-
-
-
-
-  }else if(!isPC && isNowPC){ // 지금은 mobile이고 처음엔 pc였다.
-    console.log('모바일로 전환');
-
-    // 1. letter 초기화
-    if(isLetterOpen){
-      lenis.stop();
-      header.classList.remove('viewing');
-      document.documentElement.classList.add('fixed');
-      letterViewer.style.zIndex = '99';
-
-      closeBtnMo.addEventListener('click', function(){
-        lenis.start();
-        document.documentElement.classList.remove('fixed');
-    });
-    }
-    
-gsap.set(mobileNav,{yPercent:-100, autoAlpha:0});
-gsap.set(mobileNavBox,{autoAlpha:0});
-
-
   }
-
-  isNowPC = isPC;
-}
-
-
-
-
-handleResize();
-// 반응형 대응
-window.addEventListener('resize', function(){
-  handleResize();
-  handleStopPropagation();
-  handleLetterEventBinding();
 });
 
-
-
-// 초기 모바일 nav 상태 세팅
+// 4-3. 모바일 Nav 모션
 gsap.set(mobileNav,{yPercent:-100, autoAlpha:0});
 gsap.set(mobileNavBox,{autoAlpha:0});
-// 모바일 nav show 모션
+
+// Nav show 함수 선언
 function mobileNavShow(){
   const showTl = gsap.timeline({paused:true});
   showTl
@@ -273,7 +130,8 @@ function mobileNavShow(){
   showTl.restart();
   lenis.stop();
 }
-// 모바일 nav hidden 모션
+
+// Nav hidden 함수 선언
 function mobileNavHidden(){
   const hiddenTl = gsap.timeline({paused:true});
   hiddenTl
@@ -287,13 +145,9 @@ function mobileNavHidden(){
 }
 
 
-// Monthly letter 모션
+// 5. Monthly Letter
+// 5-1. Monthly letter 버튼 클릭
 function handleLetterEventBinding(){
-  // 이벤트 초기화
-//   letterBtn?.removeEventListener('click', letterView);
-//   letterBtnMo?.removeEventListener('click',letterView);
-// closeBtn?.removeEventListener('click', letterClosePc);   
-// closeBtnMo?.removeEventListener('click', letterCloseMo); 
   if(mediaQueryPC.matches){
     letterBtn?.addEventListener('click',letterView);
     closeBtn?.addEventListener('click', letterClosePc);
@@ -305,21 +159,18 @@ function handleLetterEventBinding(){
     });
     closeBtnMo?.addEventListener('click', function(){
       letterCloseMo();
-      // letterViewer.style.zIndex = '10';
       gsap.set(noise,{autoAlpha:0});
-
     });
   }
 }
-// 초기 이벤트 등록
 handleLetterEventBinding();
 
 
-
+// 5-2. Letter open/hidden 모션
 gsap.set('.sc-letter',{yPercent:-100, autoAlpha:0});
 gsap.set('.sc-letter .inner',{autoAlpha:0});
 
-// 편지 오픈
+// open
 function letterView(){
   lenis.stop();
   if(mediaQueryPC.matches){
@@ -335,7 +186,7 @@ function letterView(){
   viewTl.restart();
 }
 
-// 편지 닫기
+// close
 // 공통
 function letterCloseAniamtion(){
 const hideTl = gsap.timeline({paused:true});
@@ -358,19 +209,19 @@ function letterCloseMo(){
 
   const isMobileNavOpen = mobileMenuBtn.classList.contains('show');
 
-  if(isMobileNavOpen){ // nav 열려있는 상태
+  if(isMobileNavOpen){ 
+    // Nav 열림
     lenis.stop();
     document.documentElement.classList.add('fixed');    
   }else{
+    // Nav 닫힘
     lenis.start();
         document.documentElement.classList.remove('fixed');    
-    
   }
 }
 
 
-
-// letter 이벤트 버블링 방지
+// 5-3. letter 이벤트 버블링 방지
 function handleStopPropagation() {  
   const letterPC = document.querySelector('.sc-letter .paper');
   const letterMO = document.querySelector('.sc-letter .inner');
@@ -393,9 +244,8 @@ handleStopPropagation();
 
 
 
-
-// 접근성 컨트롤
-// 1. Monthly letter (PC, MO)
+// 6.접근성 컨트롤
+// 6-1. Monthly letter (PC, MO)
 letterBtn.addEventListener('click', function(){
   letterBtn.setAttribute('aria-expanded',"true");
 });
@@ -412,11 +262,88 @@ closeBtnMo.addEventListener('click',function(){
   letterBtnMo.setAttribute('aria-expanded',"false");
 });
 
-// 2. 모바일 Nav
+// 6-2. 모바일 Nav
 mobileMenuBtn.addEventListener('click', function(){
   if(mobileMenuBtn.classList.contains('show')){
     mobileMenuBtn.querySelector('.btn-menu').setAttribute('aria-expanded',"true");
   }else{
     mobileMenuBtn.querySelector('.btn-menu').setAttribute('aria-expanded',"false");
   }
+});
+
+
+
+// 반응형 충돌 방지 초기화 스크립트
+// 처음 화면 크기
+let isNowPC = mediaQueryPC.matches;
+
+function handleResize(){
+  // 🌟 반응형 헤더
+  if (mediaQueryPC.matches) {
+  document.documentElement.classList.remove('mobile');
+  header.classList.remove('mobile');
+
+  // 접근성 초기화
+  mobileMenuBtn.querySelector('.btn-menu').removeAttribute('aria-expanded');
+
+} else {
+  document.documentElement.classList.add('mobile');
+  header.classList.add('mobile');
+
+  // 접근성 초기화
+  mobileMenuBtn.querySelector('.btn-menu').setAttribute('aria-expanded',"false");
+
+}
+
+  // 🌟 반응형 초기화 (bp 추적)
+  const isPC = mediaQueryPC.matches;
+  const isLetterOpen = letterViewer.classList.contains('open');
+
+  if(isPC && !isNowPC){ 
+    // 모바일 -> pc로 전환
+    // 1. letter 초기화
+    if(isLetterOpen){
+      header.classList.add('viewing');
+      lenis.stop();
+      document.documentElement.classList.add('fixed');
+    }
+    letterViewer.style.zIndex = '10';
+
+    // 2. 모바일 Nav 초기화
+    const isMobileNavOpen = mobileMenuBtn.classList.contains('show');
+    if(isMobileNavOpen && isPC){
+      mobileMenuBtn.classList.remove('show');
+      document.documentElement.classList.remove('fixed');
+      mobileNavHidden();
+    }
+
+  }else if(!isPC && isNowPC){ 
+    // pc -> 모바일로 전환
+    // 1. letter 초기화
+    if(isLetterOpen){
+      lenis.stop();
+      header.classList.remove('viewing');
+      document.documentElement.classList.add('fixed');
+      letterViewer.style.zIndex = '99';
+
+      closeBtnMo.addEventListener('click', function(){
+        lenis.start();
+        document.documentElement.classList.remove('fixed');
+    });
+    }
+    
+   // Nav 기본값 재설정
+  gsap.set(mobileNav,{yPercent:-100, autoAlpha:0});
+  gsap.set(mobileNavBox,{autoAlpha:0});
+}
+isNowPC = isPC;
+}
+
+handleResize();
+
+// 반응형 resize
+window.addEventListener('resize', function(){
+  handleResize();
+  handleStopPropagation();
+  handleLetterEventBinding();
 });

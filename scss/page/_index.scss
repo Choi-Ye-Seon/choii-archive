@@ -2,12 +2,12 @@
 .sc-home {
   font-family: 'PlayfairDisplay';
   position: relative;
-  // background-color: #c9c9c9;
   .inner {
     height: 650vh;
     max-width: none;
     padding: 0;
   }
+  // main title
   .group-title {
     position: absolute;
     display: flex;
@@ -27,7 +27,7 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      width: 100%; // 100 -> auto
+      width: 100%;
     }
     h2 {
       display: flex;
@@ -68,7 +68,7 @@
     }
   }
 
-  //   스티키 영역 고정
+  //  hero sticky
   .sticky-wrap {
     position: sticky;
     display: flex;
@@ -107,12 +107,10 @@
     flex: none;
     flex-wrap: nowrap;
     height: min-content;
-    // left: 50%;
     overflow: visible;
     width: 100%;
-    // z-index: 1;
   }
-  // 사진 프레임
+  // hero frame
   .content-box {
     position: relative;
     display: flex;
@@ -125,7 +123,6 @@
     height: 100vh;
     z-index: 1;
     opacity: 1;
-    will-change: opacity;
   }
   .main-frame {
     position: relative;
@@ -140,16 +137,15 @@
     transform-origin: center center;
   }
 
+  // Figure Box
   .area-figure {
     position: relative;
     width: 720px;
     aspect-ratio: 16 / 9;
-    // height: 405px;
     overflow: hidden;
     z-index: 1;
     @include tablet-l {
       width: 510px;
-      // height: 282px;
     }
     @include tablet-p {
       width: 360px;
@@ -166,15 +162,16 @@
     left: 0;
     transform-origin: 50% 50% 0px;
   }
+  // hero 시퀀스
   .figure.sequence {
     position: relative;
     .overlay {
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      content: '';
       background-color: rgba(255, 255, 255, 0.6);
       z-index: 1;
     }
@@ -201,7 +198,7 @@
   }
 }
 
-// COMMENT
+// sc-comment
 .sc-comment {
   position: relative;
   height: 200vh;
@@ -228,7 +225,8 @@
       bottom: 14px;
     }
   }
-  // 코멘트
+
+  // text
   .group-comment {
     position: relative;
     display: flex;
@@ -261,7 +259,6 @@
       @include tablet-l {
         font-size: 1rem;
       }
-
       .hidden {
         display: none;
         @include tablet-l {
@@ -272,10 +269,9 @@
   }
 }
 
-// FILM
+// sc-film
 .sc-film {
   position: relative;
-  background-color: #fff;
   width: 100%;
   .inner {
     display: flex;
@@ -287,6 +283,7 @@
       gap: 5rem;
     }
   }
+  // title
   .layout-fixed {
     position: sticky;
     top: 0;
@@ -334,7 +331,6 @@
         margin-bottom: 5px;
         @include tablet-l {
           font-size: 1.125rem;
-          // margin-bottom: 5px;
         }
         @include mobile-p {
           font-size: 1rem;
@@ -342,15 +338,10 @@
       }
     }
     .desc {
-      // display: flex;
-      // align-items: center;
       line-height: 1.8;
-      // &::before {
-      //   content: ':';
-      //   padding-right: 5px;
-      // }
     }
   }
+  // film
   .group-film {
     display: flex;
     flex-direction: column;
@@ -371,9 +362,10 @@
   }
 }
 
-// ABOUT
+// sc-about
 .sc-about {
-  padding: 100px 0;
+  margin-top: 100px;
+  padding-bottom: 100px;
   .group-contents {
     display: flex;
     flex-direction: column;
@@ -398,11 +390,10 @@
   }
   .comment-line {
     display: inline-block;
-    // transform: translateY(100%);
   }
 }
 
-// Montyly letter
+// Monthly letter
 .sc-letter {
   position: fixed;
   top: 0;
@@ -413,25 +404,12 @@
   display: flex;
   align-items: center;
   z-index: 10;
-  // opacity: 0;
-  // visibility: hidden;
   overflow: hidden;
-  // transform: translateY(-100%);
-  // transition: transform 0.3s ease, opacity 0.5s ease, visibility 0.5s;
-
-  &.view {
-    // transform: translateY(0);
-    // opacity: 1;
-    // visibility: visible;
-    // transition: transform 0.3s;
-  }
   .inner {
     display: flex;
     gap: 60px;
     height: 100%;
     padding: $header-height 2.5rem;
-    // height: calc(100% - 200px);
-    // background-color: red;
     @include tablet-l {
       flex-direction: column;
       align-items: center;
@@ -440,6 +418,7 @@
       padding: 2.5rem;
     }
   }
+  // 모바일 닫기 버튼
   button.btn-close {
     display: none;
     @include tablet-l {
@@ -482,14 +461,14 @@
         padding-right: 0;
       }
       &::-webkit-scrollbar {
-        width: 5px; /* 스크롤바 너비 */
+        width: 5px;
       }
       &::-webkit-scrollbar-track {
-        background: #f0f0f0; /* 스크롤 트랙 배경 */
+        background: #f0f0f0;
         border-radius: 4px;
       }
       &::-webkit-scrollbar-thumb {
-        background: #dedede; /* 스크롤 핸들 색상 */
+        background: #dedede;
         border-radius: 4px;
       }
     }

@@ -12,8 +12,9 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    // background-color: #ccc;
   }
+
+  // pc nav
   #nav ul {
     display: flex;
     li.nav-item {
@@ -22,31 +23,31 @@
       height: $header-height;
       padding: 0 1.5rem;
       cursor: pointer;
+      // btn monthly-letter
       &.letter {
         padding-right: 0;
+        .btn-close {
+          display: none;
+        }
       }
+      // btn mobile-menu
       &#mobile-menu {
         display: none;
-        // padding: 0;
         .btn-menu {
           position: relative;
           width: 34px;
           height: 34px;
-          // background-color: #0ff;
           @include mobile-p {
             width: 28px;
             height: 28px;
           }
-
           span {
-            // display: block;
             position: absolute;
             width: 100%;
             height: 2px;
             background-color: $color-black;
             transition: transform 0.5s;
             transform-origin: center;
-
             &:first-child {
               transform: translateY(-6px) rotate(0deg);
             }
@@ -68,6 +69,7 @@
       }
     }
   }
+  // logo
   h1 {
     text-align: center;
     font-weight: 700;
@@ -78,12 +80,8 @@
       font-size: 1.1429rem;
     }
   }
-  .btn-primary {
-    // padding: 0.4375rem 0.875rem 0.625rem !important;
-    &.btn-close {
-      display: none;
-    }
-  }
+
+  // letter open 시
   &.viewing {
     #nav ul li.menu {
       display: none;
@@ -91,16 +89,12 @@
     #nav .monthly-letter {
       display: none;
     }
-    #nav .btn-close {
-      display: block;
+    .letter .btn-close {
+      display: block !important;
     }
   }
 
-  // 모바일 메뉴
-  // #mobile-menu {
-  //   display: none !important;
-  // }
-
+  // 모바일 버전 header
   &.mobile {
     #nav ul {
       li.nav-item:not(#mobile-menu) {
@@ -112,9 +106,8 @@
       padding: 0 !important;
     }
   }
-
+  // 모바일 nav
   .mobile-nav {
-    // display: none;
     position: fixed;
     width: 100%;
     height: 100vh;
@@ -123,11 +116,7 @@
     padding: 100px 0;
     background-color: $color-black;
     color: $color-white;
-    // transform: translateY(-100%);
     z-index: -1;
-    // opacity: 0;
-    // visibility: hidden;
-    // transition: transform 0.3s ease, opacity 0.5s ease, visibility 0.5s;
     .inner {
       height: 100%;
     }

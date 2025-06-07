@@ -1,3 +1,4 @@
+// HERO 모션
 // main title + sub title 모션
 document.addEventListener('DOMContentLoaded', function () {
     document.body.classList.remove('is-loding');
@@ -19,8 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // 2. sub title 모션
-//   gsap.set('.sc-home .group-title, .sc-home .main-scroll .content-box',{autoAlpha:0});
-
   gsap.set('.sc-home h3 .text-box span', {yPercent: 100});
   gsap.set('.sc-home h2', {height: 0});
   gsap.set('.sc-home h2 .char', {autoAlpha: 0});
@@ -28,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const mainTitle = gsap.timeline();
   mainTitle
-    // .to('.sc-home .group-title, .sc-home .main-scroll .content-box',{autoAlpha:1})
   .to('.sc-home h3 .text-box span', {yPercent: 0, stagger: 0.5})
   .to('.sc-home h2', {height: 'auto', ease: 'power2.out'})
   .to('.sc-home .group-title .wrap', {width: 'auto', ease: 'power2.out',
@@ -39,13 +37,12 @@ document.addEventListener('DOMContentLoaded', function () {
   }, '<')
   .to('.sc-home h2 .char', {autoAlpha: 1, y: 0, stagger: 0.1})
   .to('.sc-home .main-scroll .main-frame', {scale: 1, autoAlpha: 1},"<");
-  // .fromTo('.sc-home .main-scroll .main-frame', 
-  //   {scale: 0.4, autoAlpha: 0}, 
-  //   {scale: 1, autoAlpha: 1}, '<');
 });
 
 
-// 3. main frame scale 모션
+// ScrollTrigger 시작
+
+// 3. main frame scale + overlay 모션
 const frameScale = gsap.timeline({
   scrollTrigger: {
     trigger: '.sc-home .group-title',
@@ -58,23 +55,26 @@ const frameScale = gsap.timeline({
 
 frameScale
 .to('.sc-home .figure.sequence .overlay', {opacity: 0}, '<')
-.to('.sc-home .main-scroll .main-frame', {scale: 1.2, overwrite: 'auto'}, '<');
-
-
-// 3-1. main frame overlay 컨트롤
-gsap.to('.sc-home .main-scroll .main-frame', {
-  scale: 1.2,
-  scrollTrigger: {
-    trigger: '.sc-home .group-title',
-    start: '50% 0%',
-    end: '100% 0%',
-    scrub: 1,
-    onEnter: function () {
+.to('.sc-home .main-scroll .main-frame', {scale: 1.2, overwrite: 'auto',
+  onEnter: function () {
       gsap.to('.sc-home', {'--opacity': 0});
     }
-    //   markers: true,
-  }
-});
+}, '<');
+
+// 3-1. main frame overlay 컨트롤
+// gsap.to('.sc-home .main-scroll .main-frame', {
+//   scale: 1.2,
+//   scrollTrigger: {
+//     trigger: '.sc-home .group-title',
+//     start: '50% 0%',
+//     end: '100% 0%',
+//     scrub: 1,
+//     onEnter: function () {
+//       gsap.to('.sc-home', {'--opacity': 0});
+//     }
+//     //   markers: true,
+//   }
+// });
 
 
 // 4. main 이미지시퀀스
@@ -97,7 +97,7 @@ setInterval(function () {
 }, sequenceImages.length * 600);
 
 
-// 5. main hero scroll (best-images 및 data 노출)
+// 5. best-images 및 data 노출
 const mainHero = gsap.timeline({
   scrollTrigger: {
     trigger: '.sc-home',
@@ -179,14 +179,14 @@ gsap.set('.sc-comment .comment-wrap.second', { zIndex: 1 });
 
 comment
 .to('.sc-comment .comment-wrap.first .comment-line', 0.5, {yPercent: -100, autoAlpha:0}, '<')
-  .to('.sc-comment .comment-wrap.first', { zIndex: 1 },"<") // first를 아래로
-  .to('.sc-comment .comment-wrap.second', { zIndex: 2 },"<") // second를 위로
+.to('.sc-comment .comment-wrap.first', { zIndex: 1 },"<") // first를 아래로
+.to('.sc-comment .comment-wrap.second', { zIndex: 2 },"<") // second를 위로
 .to('.sc-comment .comment-wrap.second .comment-line', 0.5, {yPercent: 0,autoAlpha:1}, '<');
 
 
 
 // 8. Film
-// 8-1. Film title split
+// 8-1. Film title h2 split
 const filmTitle = document.querySelectorAll('.sc-film h2 .text');
 
 filmTitle.forEach(function (text) {
@@ -196,17 +196,18 @@ filmTitle.forEach(function (text) {
       return `<span class="word">${word}</span>`;
     })
     .join('');
-  text.innerHTML = wordWrap; // 수정된 부분
+  text.innerHTML = wordWrap; 
 });
 
+// 8-2. Film desc split
 const filmDesc = document.querySelectorAll('.sc-film .desc');
 
 filmDesc.forEach(function (desc) {
-  let wordEls = desc.innerHTML.split(''); // 또는 textContent 그대로 써도 OK
+  let wordEls = desc.innerHTML.split(''); 
   let wordWrap = wordEls
     .map(function (word) {
       if (word === ' ') {
-        return `<span class="word">&nbsp;</span>`; // 띄어쓰기 보존
+        return `<span class="word">&nbsp;</span>`; 
       }
       return `<span class="word">${word}</span>`;
     })
@@ -214,125 +215,12 @@ filmDesc.forEach(function (desc) {
   desc.innerHTML = wordWrap;
 });
 
-// 8-2. Film scrollTrigger (PC)
-// const filmStart = gsap.timeline({
-//   scrollTrigger: {
-//     trigger: '.sc-film',
-//     start: '0% 15%',
-//     end: '0% 100%',
-//     // scrub:2,
-//     toggleActions: 'play none reverse none',
-//     // markers: true
-//   }
-// });
-// gsap.set('.sc-film .group-title h2 .word, .sc-film .group-title .desc .word', {
-//   opacity: 0,
-//   y: 30,
-//   filter: 'blur(10px)'
-// });
 
-// filmStart
-//   .to(
-//     '.sc-film .group-title h2 .word',
-//     {
-//       opacity: 1,
-//       y: 0,
-//       filter: 'blur(0px)',
-//       duration: 1,
-//       stagger: 0.05,
-//       ease: 'power2.out'
-//     },
-//     'a'
-//   )
-//   .to(
-//     '.sc-film .group-title .desc:first-child .word',
-//     {
-//       opacity: 1,
-//       y: 0,
-//       filter: 'blur(0px)',
-//       duration: 1,
-//       stagger: 0.01,
-//       ease: 'power2.out'
-//     },
-//     'a-=0.25'
-//   )
-//   .to(
-//     '.sc-film .group-title .desc:last-child .word',
-//     {
-//       opacity: 1,
-//       y: 0,
-//       filter: 'blur(0px)',
-//       duration: 1,
-//       stagger: 0.01,
-//       ease: 'power2.out'
-//     },
-//     'a'
-//   );
-
-  // 8-3. Film scrollTrigger (M)
-
-// mediaQuery.add('(max-width: 1200px)', function(){
-//   const filmStartMo = gsap.timeline({
-//     scrollTrigger:{
-//           trigger: '.sc-film',
-//     start: '0% 80%',
-//     end: '0% 80%',
-//     // scrub:2,
-//     toggleActions: 'play none reverse none',
-//     markers: true
-//     }
-//   });
-//   filmStartMo
-//   .to(
-//     '.sc-film .group-title h2 .word',
-//     {
-//       opacity: 1,
-//       y: 0,
-//       filter: 'blur(0px)',
-//       duration: 1,
-//       stagger: 0.05,
-//       ease: 'power2.out'
-//     },
-//     'a'
-//   )
-//   .to(
-//     '.sc-film .group-title .desc:first-child .word',
-//     {
-//       opacity: 1,
-//       y: 0,
-//       filter: 'blur(0px)',
-//       duration: 1,
-//       stagger: 0.01,
-//       ease: 'power2.out'
-//     },
-//     'a-=0.25'
-//   )
-//   .to(
-//     '.sc-film .group-title .desc:last-child .word',
-//     {
-//       opacity: 1,
-//       y: 0,
-//       filter: 'blur(0px)',
-//       duration: 1,
-//       stagger: 0.01,
-//       ease: 'power2.out'
-//     },
-//     'a'
-//   );
-
-// });
-
-
-
-
-// let mediaQuery = gsap.matchMedia();
-
-// 코드 숙지하기
+// 8-3. Film 반응형 ScrollTrigger
+let mediaQuery = gsap.matchMedia();
 
 mediaQuery.add({
-  // PC: 1201px 이상
   isPC: "(min-width: 1201px)",
-  // Mobile/Tablet: 1200px 이하
   isMO: "(max-width: 1200px)"
 }, (context) => {
   const { isPC, isMO } = context.conditions;
@@ -347,12 +235,13 @@ mediaQuery.add({
     }
   });
 
+  // film title 모션
   gsap.set('.sc-film .group-title h2 .word, .sc-film .group-title .desc .word', {
     opacity: 0,
     y: 30,
     filter: 'blur(10px)'
   });
-
+  
   filmFrame
   .to('.sc-film .group-title h2 .word', {
     opacity: 1,
@@ -380,33 +269,28 @@ mediaQuery.add({
     }, 'a');
 
 
-    // Mobile group-film 노출 모션
-    if(isMO){
-      gsap.set(".sc-film .group-film",{y:50, opacity:0, filter:'blur(3px)'});
+  // film 노출 (mobile)
+  if(isMO){
+    gsap.set(".sc-film .group-film",{y:50, opacity:0, filter:'blur(3px)'});
 
-      gsap.to(".sc-film .group-film",{
-        opacity:1,
-        filter:'blur(0)',
-        y:0,
-        scrollTrigger:{
-          trigger:".sc-film",
-          start:"0% 20%",
-          end:"0% 20%",
-          toggleActions:"play none reverse none",
-          // markers:true
-        }
-      })
-    }
+    gsap.to(".sc-film .group-film",{
+      opacity:1,
+      filter:'blur(0)',
+      y:0,
+      scrollTrigger:{
+        trigger:".sc-film",
+        start:"0% 20%",
+        end:"0% 20%",
+        toggleActions:"play none reverse none",
+        // markers:true
+      }
+    })
+  }
 });
 
 
 
-
-// About
-
-
-
-
+// 9. About
 gsap.to('.sc-about .motion-line .ic-flower', {
   rotate: 180,
   scrollTrigger: {
@@ -424,8 +308,7 @@ gsap.to('.sc-about img', {
     trigger: '.sc-about',
     start: '0% 30%',
     end: '100% 30%',
-        toggleActions: 'play none none reverse',
-
+    toggleActions: 'play none none reverse',
     // markers:true
   },
   scale: 1,
