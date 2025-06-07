@@ -202,8 +202,8 @@ function handleResize(){
 
     // 1. letter 초기화
     if(isLetterOpen){
-      lenis.stop();
       header.classList.add('viewing');
+      lenis.stop();
       document.documentElement.classList.add('fixed');
     }
     letterViewer.style.zIndex = '10';
@@ -236,7 +236,8 @@ function handleResize(){
     });
     }
     
-
+gsap.set(mobileNav,{yPercent:-100, autoAlpha:0});
+gsap.set(mobileNavBox,{autoAlpha:0});
 
 
   }
@@ -289,10 +290,10 @@ function mobileNavHidden(){
 // Monthly letter 모션
 function handleLetterEventBinding(){
   // 이벤트 초기화
-  letterBtn?.removeEventListener('click', letterView);
-  letterBtnMo?.removeEventListener('click',letterView);
-closeBtn?.removeEventListener('click', letterClosePc);   
-closeBtnMo?.removeEventListener('click', letterCloseMo); 
+//   letterBtn?.removeEventListener('click', letterView);
+//   letterBtnMo?.removeEventListener('click',letterView);
+// closeBtn?.removeEventListener('click', letterClosePc);   
+// closeBtnMo?.removeEventListener('click', letterCloseMo); 
   if(mediaQueryPC.matches){
     letterBtn?.addEventListener('click',letterView);
     closeBtn?.addEventListener('click', letterClosePc);

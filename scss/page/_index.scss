@@ -342,13 +342,13 @@
       }
     }
     .desc {
-      display: flex;
-      align-items: center;
+      // display: flex;
+      // align-items: center;
       line-height: 1.8;
-      &::before {
-        content: ':';
-        padding-right: 5px;
-      }
+      // &::before {
+      //   content: ':';
+      //   padding-right: 5px;
+      // }
     }
   }
   .group-film {
@@ -382,6 +382,9 @@
     img {
       max-width: 380px;
       width: 100%;
+      @include mobile-p {
+        max-width: 300px;
+      }
     }
   }
   .comment-wrap {

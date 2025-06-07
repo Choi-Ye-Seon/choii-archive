@@ -369,7 +369,7 @@ mediaQuery.add({
       duration: 1,
       stagger: 0.01,
       ease: 'power2.out'
-    }, 'a-=0.25')
+    }, 'a')
     .to('.sc-film .group-title .desc:last-child .word', {
       opacity: 1,
       y: 0,
@@ -422,9 +422,9 @@ gsap.set('.sc-about img', {scale: 0.4, opacity: 0});
 gsap.to('.sc-about img', {
   scrollTrigger: {
     trigger: '.sc-about',
-    start: '0% 55%',
-    end: '100% 55%',
-        toggleActions: 'play none none reverse'
+    start: '0% 30%',
+    end: '100% 30%',
+        toggleActions: 'play none none reverse',
 
     // markers:true
   },
@@ -437,7 +437,7 @@ gsap.to('.sc-about .comment-line', {
   yPercent: 0,
   scrollTrigger: {
     trigger: '.sc-about',
-    start: '70% 60%',
+    start: '60% 60%',
     end: '100% 60%',
         toggleActions: 'play none none reverse',
     // markers:true

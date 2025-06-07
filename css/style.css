@@ -1200,17 +1200,7 @@ html.fixed {
   }
 }
 .sc-film .group-title .desc {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   line-height: 1.8;
-}
-.sc-film .group-title .desc::before {
-  content: ":";
-  padding-right: 5px;
 }
 .sc-film .group-film {
   display: -webkit-box;
@@ -1257,6 +1247,11 @@ html.fixed {
 .sc-about .group-contents img {
   max-width: 380px;
   width: 100%;
+}
+@media (max-width: 480px) {
+  .sc-about .group-contents img {
+    max-width: 300px;
+  }
 }
 .sc-about .comment-wrap {
   text-align: center;
