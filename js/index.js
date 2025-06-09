@@ -61,20 +61,6 @@ frameScale
     }
 }, '<');
 
-// 3-1. main frame overlay 컨트롤
-// gsap.to('.sc-home .main-scroll .main-frame', {
-//   scale: 1.2,
-//   scrollTrigger: {
-//     trigger: '.sc-home .group-title',
-//     start: '50% 0%',
-//     end: '100% 0%',
-//     scrub: 1,
-//     onEnter: function () {
-//       gsap.to('.sc-home', {'--opacity': 0});
-//     }
-//     //   markers: true,
-//   }
-// });
 
 
 // 4. main 이미지시퀀스
