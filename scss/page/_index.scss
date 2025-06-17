@@ -365,12 +365,13 @@
 
 // sc-about
 .sc-about {
-  padding-bottom: 100px;
+  // margin-bottom: 100px;
   .group-contents {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 80px;
+    // padding-bottom: 100px;
     img {
       max-width: 380px;
       width: 100%;
