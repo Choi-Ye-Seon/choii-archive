@@ -1093,7 +1093,6 @@ html.fixed {
 .sc-film {
   position: relative;
   width: 100%;
-  padding-bottom: 100px;
 }
 .sc-film .inner {
   display: -webkit-box;
@@ -1230,7 +1229,7 @@ html.fixed {
 }
 
 .sc-about {
-  padding-bottom: 100px;
+  padding: 100px 0;
 }
 .sc-about .group-contents {
   display: -webkit-box;

@@ -273,7 +273,7 @@
 .sc-film {
   position: relative;
   width: 100%;
-  padding-bottom: 100px;
+  // padding-bottom: 100px;
   .inner {
     display: flex;
     justify-content: space-between;
@@ -365,7 +365,7 @@
 
 // sc-about
 .sc-about {
-  padding-bottom: 100px;
+  padding: 100px 0;
   .group-contents {
     display: flex;
     flex-direction: column;
