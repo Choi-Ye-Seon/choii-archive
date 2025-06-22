@@ -1093,6 +1093,7 @@ html.fixed {
 .sc-film {
   position: relative;
   width: 100%;
+  padding-bottom: 100px;
 }
 .sc-film .inner {
   display: -webkit-box;
