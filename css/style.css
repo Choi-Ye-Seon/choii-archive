@@ -579,7 +579,7 @@ html.fixed {
       -ms-flex-align: center;
           align-items: center;
   gap: 80px;
-  padding: 100px 2.5rem 20px;
+  padding: 0 2.5rem;
 }
 @media (max-width: 1200px) {
   #footer .inner {
@@ -1093,7 +1093,6 @@ html.fixed {
 .sc-film {
   position: relative;
   width: 100%;
-  padding-bottom: 100px;
 }
 .sc-film .inner {
   display: -webkit-box;
@@ -1230,9 +1229,6 @@ html.fixed {
   width: 100%;
 }
 
-.sc-about {
-  padding-bottom: 100px;
-}
 .sc-about .group-contents {
   display: -webkit-box;
   display: -ms-flexbox;

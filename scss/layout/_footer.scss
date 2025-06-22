@@ -6,7 +6,8 @@
     flex-direction: column;
     align-items: center;
     gap: 80px;
-    padding: 100px 2.5rem 20px;
+    // padding: 100px 2.5rem 20px;
+    padding: 0 2.5rem;
     @include tablet-l {
       gap: 6.67vw;
     }
