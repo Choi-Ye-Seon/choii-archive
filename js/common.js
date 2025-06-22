@@ -36,6 +36,9 @@ window.addEventListener('beforeunload', () => {
   lenis.scrollTo(0, { immediate: true });
 });
 
+console.log('html:', document.documentElement.scrollHeight);
+console.log('body:', document.body.scrollHeight);
+console.log('.lenis:', document.querySelector('.lenis')?.scrollHeight);
 
 // 3. Header
 // 3-1. scrollSpy
